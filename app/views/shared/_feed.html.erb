@@ -1,0 +1,6 @@
+<% unless @feed_items.empty? %>
+  <table class="issues" summary="User issues">
+    <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
+  </table>
+  <%= will_paginate @feed_items %>
+<% end %>

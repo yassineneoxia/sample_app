@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails Tutorial</title>
+  </head>
+  <body>
+	<% if signed_in? %>
+		<table class="front" summary="For signed-in users">
+			<tr>
+				<td class="main">
+					<h1 class="issue">What's up?</h1>
+					<%= render 'shared/issue_form' %>
+					<%= render 'shared/feed' %>
+				</td>
+				<td class="sidebar round">
+					<%= render 'shared/user_info' %>
+					<%= render 'shared/stats' %>
+				</td>
+			</tr>
+		</table>
+	<% else %>
+
+    <h1>Neoxia Ruby on Rails Tutorial</h1>
+    <p>
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      is a project to make a book and screencasts to teach web development
+      with <a href="http://rubyonrails.org/">Ruby on Rails</a>. This
+      is the sample application for the tutorial.
+    </p>
+	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+	<% end %>
+
+  </body>
+</html>
